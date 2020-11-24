@@ -56,7 +56,7 @@
             "timeout": 2000
        },
        "stop": {
-           "url": "https://twilio-sfmc-sakshi.herokuapp.com/journeybuilder/stop/",
+           "url": "https://twilio-sfmc-sakshi.herokuapp.com/journeybuilder/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
