@@ -115,11 +115,16 @@ exports.execute = function(req, res) {
           function(err, responseData){
         if(!err) {
         console.log(responseData);
-        console.log(responseData.sid); 
-        console.log(responseData.SmsStatus);
-        console.log(responseData.MessageStatus); 
-        console.log(responseData.MessageSid); 
-        console.log(responseData.ApiVersion);
+        console.log(responseData.accountSid); 
+        console.log(responseData.apiVersion);
+        console.log(responseData.body); 
+        console.log(responseData.from); 
+        console.log(responseData.sid);
+        console.log(responseData.status);
+        console.log(responseData.to);
+        console.log(responseData.direction); 
+        console.log(responseData.errorCode); 
+        console.log(responseData.errorMessage);
         } } );
         // .then(message => console.log(message.sid))
         //.done();
