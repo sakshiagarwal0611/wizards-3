@@ -122,9 +122,9 @@ exports.execute = function(req, res) {
         console.log(responseData.ApiVersion);
     };
                 
-               )
-        .then(message => console.log(message.sid))
-        .done();
+               );
+       // .then(message => console.log(message.sid))
+       // .done();
 
 
 
