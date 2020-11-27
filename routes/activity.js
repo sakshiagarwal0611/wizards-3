@@ -111,7 +111,7 @@ exports.execute = function(req, res) {
             statusCallback: "https://encwq9bqo98l04z.m.pipedream.net",
             from: '+12058914350',
             to: '+91' + to
-        },
+        }/*,
           function(err, responseData)
                 {
         console.log(responseData);
@@ -120,11 +120,11 @@ exports.execute = function(req, res) {
          console.log(responseData.MessageStatus); 
          console.log(responseData.MessageSid); 
         console.log(responseData.ApiVersion);
-    };
+    };*/
                 
-               );
-       // .then(message => console.log(message.sid))
-       // .done();
+               )
+        .then(message => console.log(message.sid))
+        .done();
 
 
 
