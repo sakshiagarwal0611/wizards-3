@@ -108,7 +108,7 @@ exports.execute = function(req, res) {
     client.messages
         .create({
             body: body,
-           // statusCallback:
+            statusCallback: "https://encwq9bqo98l04z.m.pipedream.net",
             from: '+12058914350',
             to: '+91' + to
         })
