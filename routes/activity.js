@@ -187,7 +187,7 @@ exports.execute = function(req, res) {
        
 });
 });
-console.log("pass");
+console.log("we have inserted the tracking data in to the DE");
                     
         } } );
         // .then(message => console.log(message.sid))
