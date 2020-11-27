@@ -108,29 +108,26 @@ exports.execute = function(req, res) {
     client.messages
         .create({
             body: body,
-            statusCallback: "https://encwq9bqo98l04z.m.pipedream.net",
+            statusCallback: "https://encwq9bqo98l04z.m.pipedream.net/",
             from: '+12058914350',
             to: '+91' + to
-        }/*,
-          function(err, responseData)
-                {
+        },
+          function(err, responseData){
+        if(!err) {
         console.log(responseData);
         console.log(responseData.sid); 
         console.log(responseData.SmsStatus);
-         console.log(responseData.MessageStatus); 
-         console.log(responseData.MessageSid); 
+        console.log(responseData.MessageStatus); 
+        console.log(responseData.MessageSid); 
         console.log(responseData.ApiVersion);
-    };*/
-                
-               )
-        .then(message => console.log(message.sid))
-        .done();
-
-
-
-    // FOR TESTING
+        } } );
+        // .then(message => console.log(message.sid))
+        //.done();
+        // FOR TESTING
     logData(req);
     res.send(200, 'Publish');
+};
+
 
     // Used to decode JWT
     // JWT(req.body, process.env.jwtSecret, (err, decoded) => {
@@ -153,7 +150,7 @@ exports.execute = function(req, res) {
     //         return res.status(400).end();
     //     }
     // });
-};
+
 
 
 /*
