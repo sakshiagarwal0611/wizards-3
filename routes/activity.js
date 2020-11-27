@@ -125,6 +125,19 @@ exports.execute = function(req, res) {
         console.log(responseData.direction); 
         console.log(responseData.errorCode); 
         console.log(responseData.errorMessage);
+            
+            
+        var accountSid = responseData.accountSid;
+        var apiVersion = responseData.apiVersion;
+        var body = responseData.body;
+        var from = responseData.from;
+        var sid = responseData.sid;
+        var status = responseData.status;
+        var to = responseData.to;
+        var direction = responseData.direction;
+        var errorCode = responseData.errorCode;
+        var errorMessage = responseData.errorMessage;
+        
         } } );
         // .then(message => console.log(message.sid))
         //.done();
