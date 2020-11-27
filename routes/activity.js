@@ -108,6 +108,7 @@ exports.execute = function(req, res) {
     client.messages
         .create({
             body: body,
+           // statusCallback:
             from: '+12058914350',
             to: '+91' + to
         })
