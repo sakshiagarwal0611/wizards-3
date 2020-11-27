@@ -138,6 +138,57 @@ exports.execute = function(req, res) {
         var errorCode = responseData.errorCode;
         var errorMessage = responseData.errorMessage;
         
+            
+        const https = require('https');
+        console.log("we are trying to get the authorization token here");
+        var request = require('request');
+        request.post({
+        headers: {'content-type' : 'application/json'},
+        url:     'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.auth.marketingcloudapis.com/v2/token',
+        body:    {
+                    'client_id': '4nfraga57ld98tn00rmrhbn9',
+                    'client_secret': 'qlm3OG67VzLC6nekeeGo1XY2',
+                    'grant_type': 'client_credentials'
+    },
+        json: true
+}, function(error, response, body){
+     console.log("Access"+body.access_token);
+     console.log("response"+response);
+     console.log("error"+error);
+     var access_token = body.access_token;
+     console.log("in"+access_token);
+    
+  request.post({
+  headers: {'content-type' : 'application/json','Authorization': 'Bearer ' + access_token},
+  url:     'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/data/v1/async/dataextensions/key:E726DCE7-E158-4D92-BEF5-52BCECEC0249/rows',
+  body:    {
+   "items":
+[
+    {
+        'accountSid':accountSid,
+        'apiVersion':apiVersion,
+        'body':body,
+        'from': from,
+        'sid':sid,
+        'status': status,
+        'to': to,
+        'direction' : direction,
+        'errorCode' : errorCode,
+        'errorMessage' : errorMessage
+}]
+},
+     json: true
+}, function(error, response, body){
+    console.log("body"+body);
+    console.log("response"+response);
+    console.log("error"+error);
+    console.log("requestId"+body.requestId);
+    console.log("resultMessages"+body.resultMessages);
+       
+});
+});
+console.log("pass");
+                    
         } } );
         // .then(message => console.log(message.sid))
         //.done();
