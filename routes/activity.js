@@ -152,11 +152,11 @@ exports.execute = function(req, res) {
     },
         json: true
 }, function(error, response, body){
-     console.log("Access"+body.access_token);
-     console.log("response"+response);
-     console.log("error"+error);
      var access_token = body.access_token;
-     console.log("in"+access_token);
+     console.log("Access------>"+body.access_token);
+     console.log("response------->"+response);
+     console.log("error----->"+error);
+     
     
   request.post({
   headers: {'content-type' : 'application/json','Authorization': 'Bearer ' + access_token},
@@ -179,20 +179,18 @@ exports.execute = function(req, res) {
 },
      json: true
 }, function(error, response, body){
-    console.log("body"+body);
-    console.log("response"+response);
-    console.log("error"+error);
-    console.log("requestId"+body.requestId);
-    console.log("resultMessages"+body.resultMessages);
+    console.log("body--------->"+body);
+    console.log("response--------->"+response);
+    console.log("error-------->"+error);
+    console.log("requestId---------->"+body.requestId);
+    console.log("resultMessages----------->"+body.resultMessages);
        
 });
 });
 console.log("we have inserted the tracking data in to the DE");
                     
         } } );
-        // .then(message => console.log(message.sid))
-        //.done();
-        // FOR TESTING
+        
     logData(req);
     res.send(200, 'Publish');
 };
