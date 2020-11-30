@@ -157,8 +157,10 @@ exports.execute = function(req, res) {
      console.log("response------->"+response);
      console.log("error----->"+error);
      
-    
-  request.post({
+    const https1 = require('https');
+    console.log("we are calling out the api to insert row in DE");
+    var request1 = require('request');
+  request1.post({
   headers: {'content-type' : 'application/json','Authorization': 'Bearer ' + access_token},
   url:     'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/data/v1/async/dataextensions/key:E726DCE7-E158-4D92-BEF5-52BCECEC0249/rows',
   body:    {
