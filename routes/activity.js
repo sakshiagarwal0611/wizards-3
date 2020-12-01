@@ -155,8 +155,8 @@ exports.execute = function(req, res) {
      var access_token = body.access_token;
      console.log("Access------>"+body.access_token);
      console.log("access_token------>" + access_token);
-     console.log("response------->"+response);
-     console.log("error----->"+error);
+     console.log("Response------->"+response);
+     console.log("Error----->"+error);
      
    //const https = require('https');
     console.log("we are calling out the api to insert row in DE");
@@ -168,16 +168,16 @@ exports.execute = function(req, res) {
    "items":
 [
     {
-        'accountSid':accountSid,
-        'apiVersion':apiVersion,
+       // 'accountSid':accountSid,
+       // 'apiVersion':apiVersion,
         'body':body,
         'from': from,
         'sid':sid,
         'status': status,
-        'to': to,
-        'direction' : direction,
-        'errorCode' : errorCode,
-        'errorMessage' : errorMessage
+        'to': to
+       // 'direction' : direction,
+       // 'errorCode' : errorCode,
+       // 'errorMessage' : errorMessage
 }]
 },
      json: true
