@@ -154,12 +154,13 @@ exports.execute = function(req, res) {
 }, function(error, response, body){
      var access_token = body.access_token;
      console.log("Access------>"+body.access_token);
+     console.log("access_token------>" + access_token);
      console.log("response------->"+response);
      console.log("error----->"+error);
      
-   const https = require('https');
+   //const https = require('https');
     console.log("we are calling out the api to insert row in DE");
-   var request = require('request');
+   //var request = require('request');
   request.post({
   headers: {'content-type' : 'application/json','Authorization': 'Bearer ' + access_token},
   url:     'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/data/v1/async/dataextensions/key:36B87A1F-3606-46F2-BDB8-58DF209F1EDF/rows',
@@ -189,7 +190,7 @@ exports.execute = function(req, res) {
        
 });
 });
-console.log("we have inserted the tracking data in to the DE");
+//console.log("we have inserted the tracking data in to the DE");
                     
         } } );
         
