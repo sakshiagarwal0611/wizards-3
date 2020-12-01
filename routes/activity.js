@@ -168,16 +168,16 @@ exports.execute = function(req, res) {
    "items":
 [
     {
-       // 'accountSid':accountSid,
-       // 'apiVersion':apiVersion,
-       // 'body':body,
-       // 'from': from,
-        'sid':sid
-       // 'status': status,
-        //'to': to,
-      //  'direction' : direction,
-        //'errorCode' : errorCode,
-       // 'errorMessage' : errorMessage
+        'accountSid':accountSid,
+        'apiVersion':apiVersion,
+        'body':body,
+        'from': from,
+        'sid':sid,
+        'status': status,
+        'to': to,
+        'direction' : direction,
+        'errorCode' : errorCode,
+        'errorMessage' : errorMessage
 }]
 },
      json: true
