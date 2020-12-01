@@ -182,11 +182,11 @@ exports.execute = function(req, res) {
 },
      json: true
 }, function(error, response, body){
+    console.log("requestId---------->"+body.requestId);
     console.log("body--------->"+body);
     console.log("response--------->"+response);
     console.log("error-------->"+error);
-    console.log("requestId---------->"+body.requestId);
-    console.log("resultMessages----------->"+body.resultMessages);
+   
        
 });
 });
