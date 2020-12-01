@@ -162,7 +162,7 @@ exports.execute = function(req, res) {
     var request1 = require('request');
   request1.post({
   headers: {'content-type' : 'application/json','Authorization': 'Bearer ' + access_token},
-  url:     'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/data/v1/async/dataextensions/key:E726DCE7-E158-4D92-BEF5-52BCECEC0249/rows',
+  url:     'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/data/v1/async/dataextensions/key:36B87A1F-3606-46F2-BDB8-58DF209F1EDF/rows',
   body:    {
    "items":
 [
