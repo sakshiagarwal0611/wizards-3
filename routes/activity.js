@@ -170,11 +170,11 @@ exports.execute = function(req, res) {
     {
        // 'accountSid':accountSid,
        // 'apiVersion':apiVersion,
-        'body':body,
-        'from': from,
-        'sid':sid,
-        'status': status,
-        'to': to
+       // 'body':body,
+       // 'from': from,
+        'sid':sid
+      //  'status': status,
+     //   'to': to
        // 'direction' : direction,
        // 'errorCode' : errorCode,
        // 'errorMessage' : errorMessage
