@@ -35,10 +35,19 @@ define([
         // Disable the next button if a value isn't selected
       //  $('#select1').change(function() {
         //    var message = getMessage();
-        //    connection.trigger('updateButton', { button: 'next', enabled: Boolean(message) });
+           connection.trigger('updateButton', { button: 'next', enabled: Boolean(message) });
 
        //     $('#message').html(message);
     //    });
+        
+        // Toggle step 4 active/inactive
+        // If inactive, wizard hides it and skips over it during navigation
+        $('#toggleLastStep').click(function() {
+            lastStepEnabled = !lastStepEnabled; // toggle status
+            steps[3].active = !steps[3].active; // toggle active
+
+            connection.trigger('updateSteps', steps);
+        });
 
     }
 
@@ -98,6 +107,85 @@ define([
     function onGetEndpoints(endpoints) {
         // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
         console.log("Get End Points function: " + JSON.stringify(endpoints));
+    }
+    
+    function onClickedNext () {
+        if (
+            (currentStep.key === 'step3' && steps[3].active === false) ||
+            currentStep.key === 'step4'
+        ) {
+            save();
+        } else {
+            connection.trigger('nextStep');
+        }
+    }
+
+    function onClickedBack () {
+        connection.trigger('prevStep');
+    }
+
+    function onGotoStep (step) {
+        showStep(step);
+        connection.trigger('ready');
+    }
+
+    function showStep(step, stepIndex) {
+        if (stepIndex && !step) {
+            step = steps[stepIndex-1];
+        }
+
+        currentStep = step;
+
+        $('.step').hide();
+
+        switch(currentStep.key) {
+            case 'step1':
+                $('#step1').show();
+                connection.trigger('updateButton', {
+                    button: 'next',
+                    enabled: Boolean(getMessage())
+                });
+                connection.trigger('updateButton', {
+                    button: 'back',
+                    visible: false
+                });
+                break;
+            case 'step2':
+                $('#step2').show();
+                connection.trigger('updateButton', {
+                    button: 'back',
+                    visible: true
+                });
+                connection.trigger('updateButton', {
+                    button: 'next',
+                    text: 'next',
+                    visible: true
+                });
+                break;
+            case 'step3':
+                $('#step3').show();
+                connection.trigger('updateButton', {
+                     button: 'back',
+                     visible: true
+                });
+                if (lastStepEnabled) {
+                    connection.trigger('updateButton', {
+                        button: 'next',
+                        text: 'next',
+                        visible: true
+                    });
+                } else {
+                    connection.trigger('updateButton', {
+                        button: 'next',
+                        text: 'done',
+                        visible: true
+                    });
+                }
+                break;
+            case 'step4':
+                $('#step4').show();
+                break;
+        }
     }
 
     function save() {
