@@ -33,12 +33,12 @@ define([
         connection.trigger('requestEndpoints');
         
         // Disable the next button if a value isn't selected
-      //  $('#select1').change(function() {
-        //    var message = getMessage();
+       $('#select1').change(function() {
+            var message = getMessage();
            connection.trigger('updateButton', { button: 'next', enabled: Boolean(message) });
 
-       //     $('#message').html(message);
-    //    });
+            $('#message').html(message);
+     });
         
         // Toggle step 4 active/inactive
         // If inactive, wizard hides it and skips over it during navigation
