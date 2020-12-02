@@ -9,7 +9,10 @@ define([
     var payload = {};
     var lastStepEnabled = false;
     var steps = [ // initialize to the same value as what's set in config.json for consistency
-        { "label": "Create SMS Message", "key": "step1" }
+        { "label": "Create SMS Message", "key": "step1" },
+        { "label": "Step 2", "key": "step2" },
+        { "label": "Step 3", "key": "step3" },
+        { "label": "Step 4", "key": "step4", "active": false }
     ];
     var currentStep = steps[0].key;
 
@@ -20,14 +23,23 @@ define([
     connection.on('requestedEndpoints', onGetEndpoints);
 
     connection.on('clickedNext', save);
-    //connection.on('clickedBack', onClickedBack);
-    //connection.on('gotoStep', onGotoStep);
+    connection.on('clickedBack', onClickedBack);
+    connection.on('gotoStep', onGotoStep);
 
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
         connection.trigger('ready');
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
+        
+        // Disable the next button if a value isn't selected
+      //  $('#select1').change(function() {
+        //    var message = getMessage();
+        //    connection.trigger('updateButton', { button: 'next', enabled: Boolean(message) });
+
+       //     $('#message').html(message);
+    //    });
+
     }
 
     function initialize(data) {
