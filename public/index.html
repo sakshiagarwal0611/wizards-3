@@ -8,13 +8,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+    
+    //using tinyMVC
     <script src="https://cdn.tiny.cloud/1/8zy98iygd3ouqncc5mhw6f5n3jj15f3xeikmeum4izpkw3mw/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
     tinymce.init({
       selector: '#mytextarea'
     });
   </script>
-    <script src="mc/js/app-start-built.js?v=228.0.15"></script>
+    
+    
+   
     <script type="text/javascript">
         (function() {
             var config = {
@@ -28,19 +32,20 @@
             require(config, dependencies);
         })();
     </script>
-<script type="text/javascript" src="ckeditor.js"></script>
-    <!--Styles-->
-    <style type="text/css" data-cke-temp="1">
+    
+    
+    <style type="text/css">
         body {
             padding: 20px;
             margin: 0;
         }
-        
+        .step {
+            display: none;
+        }
         #step1 {
             display: block;
         }
     </style>
-
 </head>
 
 <body>
@@ -63,13 +68,10 @@
             <div><label for="authToken">Auth Token:</label></div>
             <input class="form-control" id="authToken" type="text" name="authToken" value="">
         </div>
-        <div class="form-group">
-            <div><label for="mytext">text area</label></div>
-            <textarea id="mytext" name="mytext" class="cke_editable cke_editable_themed cke_contents_ltr cke_show_borders">
-             Enter your text here.....
-           </textarea>
-        </div>
-        <div>
+      
+        
+// using ckeditor        
+<div>
  <div id="editor">
     <p>This is the editor content.</p>
 </div>
@@ -78,6 +80,8 @@
     CKEDITOR.replace( 'editor' );
 </script>
 </div>
+        
+        
 </div>
     
     <div id="step2" class="step">
