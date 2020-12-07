@@ -26,22 +26,22 @@
                     "Birthday": ""
                 }
             ],
-            "url": "https://wizard-sakshi.herokuapp.com/activity/execute"
+            "url": "https://wizard-sakshi.herokuapp.com/journeybuilder/execute"
         }
     },
     "configurationArguments": {
          "applicationExtensionKey": "f5d69ca3-90df-4007-8ce6-3c12ac2644ab",
        "save": {
-           "url": "https://wizard-sakshi.herokuapp.com/activity/save"
+           "url": "https://wizard-sakshi.herokuapp.com/journeybuilder/save"
        },
        "publish": {
-           "url": "https://wizard-sakshi.herokuapp.com/activity/publish"
+           "url": "https://wizard-sakshi.herokuapp.com/journeybuilder/publish"
        },
        "validate": {
-           "url": "https://wizard-sakshi.herokuapp.com/activity/validate"
+           "url": "https://wizard-sakshi.herokuapp.com/journeybuilder/validate"
        },
        "stop": {
-           "url": "https://wizard-sakshi.herokuapp.com/activity/stop"
+           "url": "https://wizard-sakshi.herokuapp.com/journeybuilder/stop"
        }
     },
     "wizardSteps": [
