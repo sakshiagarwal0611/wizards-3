@@ -3,21 +3,22 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>TESTING: Custom Journey Builder Activity</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <title>Custom Journey Builder Activity</title>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/require.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
     <script type="text/javascript">
         (function() {
             var config = {
-                baseUrl: 'js'
+                baseUrl: ''
             };
 
             var dependencies = [
                 'customActivity'
             ];
 
-            require(config, dependencies); 
+            require(config, dependencies);
         })();
     </script>
 
@@ -27,6 +28,9 @@
             padding: 20px;
             margin: 0;
         }
+        .step {
+            display: none;
+        }
         #step1 {
             display: block;
         }
@@ -35,26 +39,26 @@
 </head>
 <body>
 <div id="step1" class="step">
-    <h2>Create a Twilio SMS message:</h2>
-    <p>Twilio's Programmable SMS has the features you’ll need to build quickly and scale to production. We’ve solved the hard problems so you don’t have to.  <a href="https://www.twilio.com/sms" target="_blank">Learn more about about Twilio SMS here</a>.</p>
-    <hr>
-    <div class="form-group">
-        <div><label for="messageBody">Create message body:</label></div>
-        <input class="form-control" id="messageBody" type="text" name="messageBody" value="">        
-    </div>           
-    <div class="form-group">
-        <div><label for="messagingService">Messaging Service SID:</label></div>
-        <input class="form-control" id="messagingService" type="text" name="messagingService" value="">
-    </div>     
-    <div class="form-group">
-        <div><label for="accountSID">Account SID:</label></div>
-        <input class="form-control" id="accountSID" type="text" name="accountSID" value="">
-    </div>
-    <div class="form-group">
-        <div><label for="authToken">Auth Token:</label></div>
-        <input class="form-control" id="authToken" type="text" name="authToken" value="">
-    </div>    
 
+    Select your SMS message:
+    <select id="select1">
+        <option value="">Select an option</option>
+        <option value="someMessage">Some SMS</option>
+        <option value="anotherMessage">Another SMS</option>
+        <option value="thirdMessage">Third SMS</option>
+        <option value="unknownMessage">Unknown SMS</option>
+    </select>
+
+    <button id="toggleLastStep">Toggle Last Step</button>
+</div>
+<div id="step2" class="step">
+    Here's a second page with some info on it.
+</div>
+<div id="step3" class="step">
+    You chose the message: <div id="message"></div>
+</div>
+<div id="step4" class="step">
+    Hey, here's a fourth step, just for you.  Toggle this on or off from step 1.
 </div>
 </body>
 </html>
