@@ -30,7 +30,7 @@
         }
     },
     "configurationArguments": {
-         "applicationExtensionKey": "bc18ae66-8f0d-41b7-91d3-a18186e3f889",
+         "applicationExtensionKey": "f5d69ca3-90df-4007-8ce6-3c12ac2644ab",
        "save": {
            "url": "https://wizard-sakshi.herokuapp.com/activity/save"
        },
